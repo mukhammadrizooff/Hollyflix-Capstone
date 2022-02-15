@@ -1,4 +1,65 @@
-.hello {
-  color: red;
-  background-color: brown;
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ubuntu:ital,wght@1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 65%;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+header {
+  display: flex;
+  width: 80vw;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem auto;
+  padding: 0 2.2rem;
+  font-size: 2.5rem;
+  border: 2px solid black;
+}
+
+.logo {
+  display: block;
+  font-size: 35px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+  cursor: pointer;
+}
+
+.nav-item:not(:last-child) {
+  border-right: 2.5px solid black;
+  padding-right: 4.5rem;
+}
+
+.nav-item:hover {
+  text-shadow: 0.5rem 1rem 2rem #000;
+}
+
+footer {
+  display: flex;
+  width: 80vw;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem auto;
+  padding: 0 2.2rem;
+  font-size: 2.5rem;
+  border: 2px solid black;
+  position: fixed;
+  bottom: 0;
+  left: 10%;
+  letter-spacing: 0.5rem;
 }

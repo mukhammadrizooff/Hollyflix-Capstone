@@ -4,7 +4,7 @@ import {
   commentsCounter,
 } from './comment.js';
 
-let commentsLength = 0;
+const commentsLength = 0;
 
 const modalTemplate = (movie, commentsLength) => `
           <button class="close-modal-btn">x</button>
@@ -58,21 +58,21 @@ const createModal = (movieData, commentsLength) => {
 };
 
 const modalHandle = (movies) => {
-  console.log(movies)
+  console.log(movies);
   const openModalBtn = document.querySelectorAll('.card__comments');
 
   openModalBtn.forEach((btn, index) => {
     btn.addEventListener('click', async () => {
-      console.log(movies[index].id)
+      console.log(movies[index].id);
       openModal();
       // commentsLength = await commentsCounter(movies[index].id);
       const urlBase = 'https://api.tvmaze.com/shows/';
       const url = `${urlBase}${movies[index].id}`;
-      console.log(url)
+      console.log(url);
       const movieData = await fetch(url)
         .then((response) => response.json())
         .then((data) => data);
-        
+
       createModal(movieData, commentsLength);
       const form = document.querySelector('form');
       form.addEventListener('submit', (event) => {

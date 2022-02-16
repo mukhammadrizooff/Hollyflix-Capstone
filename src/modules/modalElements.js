@@ -1,10 +1,10 @@
-/* eslint no-unused-vars: "error" */
 import {
   displayComments,
   addComment,
+  commentsCounter,
 } from './comment.js';
 
-const commentsLength = 0;
+let commentsLength = 0;
 
 const modalTemplate = (movie, commentsLength) => `
           <button class="close-modal-btn">x</button>
@@ -15,8 +15,8 @@ const modalTemplate = (movie, commentsLength) => `
               <h2 class="movie-title">${movie.name}</h2>
             </div>
             <div class="info-container">
-            <p class="rating">Rating: ${movie.rating.average}</p>
-            <h3>Genres</h2>
+              <h3>Genres</h2>
+              <p class="rating">Rating: ${movie.rating.average}</p>
               <p class="genres">${movie.genres}</p>
               <p class="description">${movie.summary}</p> 
             </div>
@@ -60,21 +60,21 @@ const createModal = (movieData, commentsLength) => {
 };
 
 const modalHandle = (movies) => {
-  console.log(movies);
+  console.log(movies)
   const openModalBtn = document.querySelectorAll('.card__comments');
 
   openModalBtn.forEach((btn, index) => {
     btn.addEventListener('click', async () => {
-      console.log(movies[index].id);
+      console.log(movies[index].id)
       openModal();
       commentsLength = await commentsCounter(movies[index].id);
       const urlBase = 'https://api.tvmaze.com/shows/';
       const url = `${urlBase}${movies[index].id}`;
-      console.log(url);
+      console.log(url)
       const movieData = await fetch(url)
         .then((response) => response.json())
         .then((data) => data);
-
+        
       createModal(movieData, commentsLength);
       const form = document.querySelector('form');
       form.addEventListener('submit', (event) => {

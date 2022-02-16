@@ -1,5 +1,3 @@
-/*global getComment, id*/
-/*eslint no-undef: "error"*/
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const appID = 'MryrGqfCiLUJUEbyrBie';
 

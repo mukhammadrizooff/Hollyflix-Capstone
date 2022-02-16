@@ -1,12 +1,12 @@
 import {
-    displayComments,
-    addComment,
-    commentsCounter,
-  } from './comment.js';
-  
-  let commentsLength = 0;
-  
-  const modalTemplate = (movie, commentsLength) => `
+  displayComments,
+  addComment,
+  commentsCounter,
+} from './comment.js';
+
+let commentsLength = 0;
+
+const modalTemplate = (movie, commentsLength) => `
           <button class="close-modal-btn">x</button>
             <div class="modal-header">
               <figure>
@@ -33,52 +33,52 @@ import {
               </form>
             </div>
     `;
-  
-  const modalSection = document.querySelector('.modal-container');
-  const $body = document.querySelector('body');
-  
-  const openModal = () => {
-    modalSection.classList.add('show-modal');
-    $body.classList.add('overflow-hidden');
-  };
-  
-  const closeModal = () => {
-    modalSection.classList.remove('show-modal');
-    $body.classList.remove('overflow-hidden');
-    modalSection.innerHTML = '';
-  };
-  
-  const createModal = (movieData, commentsLength) => {
-    const modalArticle = document.createElement('div');
-    modalArticle.className = 'modal-card';
-    modalArticle.innerHTML = modalTemplate(movieData[0], commentsLength);
-    modalSection.appendChild(modalArticle);
-    const closeModalBtn = document.querySelector('.close-modal-btn');
-    closeModalBtn.addEventListener('click', closeModal);
-  };
-  
-  const modalHandle = (movies) => {
-    const openModalBtn = document.querySelectorAll('.btn-details');
-  
-    openModalBtn.forEach((btn, index) => {
-      btn.addEventListener('click', async () => {
-        openModal();
-        commentsLength = await commentsCounter(movies[index].id);
-        const urlBase = 'https://api.tvmaze.com/shows/api/json/v1/1/lookup.php?i=';
-        const url = `${urlBase}${movies[index].id}`;
-        const movieData = await fetch(url)
-          .then((response) => response.json())
-          .then((data) => data.movies);
-  
-        createModal(movieData, commentsLength);
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (event) => {
-          addComment(event, form, movies[index].id);
-        });
-  
-        displayComments(movies[index].id);
+
+const modalSection = document.querySelector('.modal-container');
+const $body = document.querySelector('body');
+
+const openModal = () => {
+  modalSection.classList.add('show-modal');
+  $body.classList.add('overflow-hidden');
+};
+
+const closeModal = () => {
+  modalSection.classList.remove('show-modal');
+  $body.classList.remove('overflow-hidden');
+  modalSection.innerHTML = '';
+};
+
+const createModal = (movieData, commentsLength) => {
+  const modalArticle = document.createElement('div');
+  modalArticle.className = 'modal-card';
+  modalArticle.innerHTML = modalTemplate(movieData[0], commentsLength);
+  modalSection.appendChild(modalArticle);
+  const closeModalBtn = document.querySelector('.close-modal-btn');
+  closeModalBtn.addEventListener('click', closeModal);
+};
+
+const modalHandle = (movies) => {
+  const openModalBtn = document.querySelectorAll('.btn-details');
+
+  openModalBtn.forEach((btn, index) => {
+    btn.addEventListener('click', async () => {
+      openModal();
+      commentsLength = await commentsCounter(movies[index].id);
+      const urlBase = 'https://api.tvmaze.com/shows/api/json/v1/1/lookup.php?i=';
+      const url = `${urlBase}${movies[index].id}`;
+      const movieData = await fetch(url)
+        .then((response) => response.json())
+        .then((data) => data.movies);
+
+      createModal(movieData, commentsLength);
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (event) => {
+        addComment(event, form, movies[index].id);
       });
+
+      displayComments(movies[index].id);
     });
-  };
-  
-  export default modalHandle;
+  });
+};
+
+export default modalHandle;

@@ -1,7 +1,5 @@
 /* global getComment, id */
 /* eslint no-undef: "error" */
-// eslint-disable-next-line no-unused-vars
-
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const appID = 'hXV7QwFcLUFDBIBIVZim';
 
@@ -19,7 +17,7 @@ const postComment = async (username, comment, id) => {
   const result = await resolve.text();
   return result;
 };
-
+// eslint-disable-next-line no-unused-vars
 const getComment = async () => {
   const resolve = await fetch(`${baseURL}/${appID}/comments?item_id=${id}`);
   const result = await resolve.json();

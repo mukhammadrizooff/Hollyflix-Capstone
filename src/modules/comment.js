@@ -1,7 +1,7 @@
 
 
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const appID = 'hXV7QwFcLUFDBIBIVZim';
+const appID = 'MryrGqfCiLUJUEbyrBie';
 
 const postComment = async (username, comment, id) => {
   const resolve = await fetch(`${baseURL}/${appID}/comments`, {
@@ -18,7 +18,7 @@ const postComment = async (username, comment, id) => {
   return result;
 };
 
-const getComment = async () => {
+const getComment = async (id) => {
   const resolve = await fetch(`${baseURL}/${appID}/comments?item_id=${id}`);
   const result = await resolve.json();
 

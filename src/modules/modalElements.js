@@ -15,8 +15,10 @@ const modalTemplate = (movie, commentsLength) => `
               <h2 class="movie-title">${movie.name}</h2>
             </div>
             <div class="info-container">
-              <h3>Instructions:</h2>
-              <p class="description">${movie.genres}</p>
+            <p class="rating">Rating: ${movie.rating.average}</p>
+            <h3>Genres</h2>
+              <p class="genres">${movie.genres}</p>
+              <p class="description">${movie.summary}</p> 
             </div>
             <div class="info-container comments">
               <h3>Comments (<span class="counter">${commentsLength}</span>)</h2>
@@ -65,7 +67,7 @@ const modalHandle = (movies) => {
     btn.addEventListener('click', async () => {
       console.log(movies[index].id)
       openModal();
-      // commentsLength = await commentsCounter(movies[index].id);
+      commentsLength = await commentsCounter(movies[index].id);
       const urlBase = 'https://api.tvmaze.com/shows/';
       const url = `${urlBase}${movies[index].id}`;
       console.log(url)

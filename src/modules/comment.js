@@ -3,11 +3,11 @@ import fetch from 'cross-fetch';
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const appID = 'hXV7QwFcLUFDBIBIVZim';
 
-const postComment = async (username, comment, idMovie) => {
+const postComment = async (username, comment, id) => {
   const resolve = await fetch(`${baseURL}/${appID}/comments`, {
     method: 'POST',
     body: JSON.stringify({
-      item_id: idMovie,
+      item_id: id,
       username,
       comment,
     }),
@@ -19,7 +19,7 @@ const postComment = async (username, comment, idMovie) => {
 };
 
 const getComment = async () => {
-  const resolve = await fetch(`${baseURL}/${appID}/comments?item_id=${idMovie}`);
+  const resolve = await fetch(`${baseURL}/${appID}/comments?item_id=${id}`);
   const result = await resolve.json();
 
   if (!result.length) {
@@ -29,8 +29,8 @@ const getComment = async () => {
   return result;
 };
 
-const commentsCounter = async (idMovie) => {
-  const commentsNum = await getComment(idMovie);
+const commentsCounter = async (id) => {
+  const commentsNum = await getComment(id);
   if (!commentsNum.length) {
     return 0;
   }
@@ -45,9 +45,9 @@ const commentTemplate = (date, name, comment) => `
   </li>
 `;
 
-const displayComments = async (idMovie) => {
+const displayComments = async (id) => {
   const ul = document.querySelector('ul');
-  const commentArr = await getComment(idMovie);
+  const commentArr = await getComment(id);
   ul.innerHTML = '';
   let html = '';
 
@@ -62,15 +62,15 @@ const displayComments = async (idMovie) => {
   ul.insertAdjacentHTML('beforeend', html);
 };
 
-const addComment = async (event, form, idMovie) => {
+const addComment = async (event, form, id) => {
   event.preventDefault();
   const number = document.querySelector('.counter');
   const name = form.querySelector('input');
   const comment = form.querySelector('textarea');
 
-  await postComment(name.value, comment.value, idMovie);
-  await displayComments(idMovie);
-  number.textContent = await commentsCounter(idMovie);
+  await postComment(name.value, comment.value, id);
+  await displayComments(id);
+  number.textContent = await commentsCounter(id);
   form.reset();
 };
 

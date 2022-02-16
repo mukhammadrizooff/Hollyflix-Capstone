@@ -1,8 +1,7 @@
-/*eslint no-unused-vars: "error"*/
+/* eslint no-unused-vars: "error" */
 import {
   displayComments,
   addComment,
-  commentsCounter,
 } from './comment.js';
 
 const commentsLength = 0;

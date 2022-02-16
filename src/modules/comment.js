@@ -1,5 +1,4 @@
 /* eslint no-undef: "error" */
-// eslint-disable-next-line no-unused-vars
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const appID = 'hXV7QwFcLUFDBIBIVZim';
 

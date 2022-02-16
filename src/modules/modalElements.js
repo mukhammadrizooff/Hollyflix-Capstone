@@ -51,25 +51,28 @@ const closeModal = () => {
 const createModal = (movieData, commentsLength) => {
   const modalArticle = document.createElement('div');
   modalArticle.className = 'modal-card';
-  modalArticle.innerHTML = modalTemplate(movieData[0], commentsLength);
+  modalArticle.innerHTML = modalTemplate(movieData, commentsLength);
   modalSection.appendChild(modalArticle);
   const closeModalBtn = document.querySelector('.close-modal-btn');
   closeModalBtn.addEventListener('click', closeModal);
 };
 
 const modalHandle = (movies) => {
-  const openModalBtn = document.querySelectorAll('.btn-details');
+  console.log(movies)
+  const openModalBtn = document.querySelectorAll('.card__comments');
 
   openModalBtn.forEach((btn, index) => {
     btn.addEventListener('click', async () => {
+      console.log(movies[index].id)
       openModal();
-      commentsLength = await commentsCounter(movies[index].id);
-      const urlBase = 'https://api.tvmaze.com/shows/api/json/v1/1/lookup.php?i=';
+      // commentsLength = await commentsCounter(movies[index].id);
+      const urlBase = 'https://api.tvmaze.com/shows/';
       const url = `${urlBase}${movies[index].id}`;
+      console.log(url)
       const movieData = await fetch(url)
         .then((response) => response.json())
-        .then((data) => data.movies);
-
+        .then((data) => data);
+        
       createModal(movieData, commentsLength);
       const form = document.querySelector('form');
       form.addEventListener('submit', (event) => {

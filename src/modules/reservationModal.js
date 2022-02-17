@@ -1,4 +1,4 @@
-import { displayReservations, addReservation, reservationsCounter } from './reservation.js';
+import { displayReservations, addReservation } from './reservation.js';
 
 const reservationLength = 0;
 
@@ -37,8 +37,8 @@ const openModal = () => {
   $body.classList.add('overflow-hidden');
 };
 const closeModal = () => {
-  modalSection.classList.add('show-modal');
-  $body.classList.add('overflow-hidden');
+  modalSection.classList.remove('show-modal');
+  $body.classList.remove('overflow-hidden');
   modalSection.innerHTML = '';
 };
 const createModal = (movieData, reservationLength) => {
@@ -55,14 +55,12 @@ const reservationHandler = (movies) => {
   reservationBtn.forEach((btn, index) => {
     btn.addEventListener('click', async () => {
       openModal();
-      console.log(movies[index].id)
-      // reservationLength = await reservationsCounter(movies[index].id);         // api call not working
       const urlBase = 'https://api.tvmaze.com/shows/';
       const url = `${urlBase}${movies[index].id}`;
       const movieData = await fetch(url)
         .then((response) => response.json())
-        .then((data) => data);   
-         
+        .then((data) => data);
+
       createModal(movieData, reservationLength);
       const form = document.querySelector('form');
       form.addEventListener('submit', (event) => {

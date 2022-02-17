@@ -7,22 +7,19 @@ const postReservation = async (username, datestart, dateEnd, id) => {
     body: JSON.stringify({
       item_id: id,
       username,
-     date_start: datestart,
-     date_end: dateEnd,
+      date_start: datestart,
+      date_end: dateEnd,
     }),
     headers: { 'Content-type': 'application/JSON' },
   });
 
   const result = await resolve.text();
-  console.log(result)
   return result;
 };
 
 const getReservation = async (id) => {
   const resolve = await fetch(`${baseURL}/${appID}/reservations?item_id=${id}`);
   const result = await resolve.json();
-
-  console.log(result,"new added dagta")
 
   if (!result.length) {
     return [];
@@ -72,11 +69,9 @@ const addReservation = async (event, form, id) => {
   const name = document.querySelector('input');
   const startDate = document.getElementById('start__date');
   const endDate = document.getElementById('end__date');
-  console.log(startDate.value, "start date")
-   await postReservation(name.value, startDate.value, endDate.value, id);
-   console.log('posted')
-   await displayReservations(id);
-   number.textContent = await reservationsCounter(id);
+  await postReservation(name.value, startDate.value, endDate.value, id);
+  await displayReservations(id);
+  number.textContent = await reservationsCounter(id);
   form.reset();
 };
 

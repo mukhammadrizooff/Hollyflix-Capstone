@@ -1,24 +1,28 @@
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const appID = 'MryrGqfCiLUJUEbyrBie';
 
-const postReservation = async (username, reservation, id) => {
-  const resolve = await fetch(`${baseURL}/${appID}/reservations`, {
+const postReservation = async (username, datestart, dateEnd, id) => {
+  const resolve = await fetch(`${baseURL}/${appID}/reservations/`, {
     method: 'POST',
     body: JSON.stringify({
       item_id: id,
       username,
-      reservation,
+     date_start: datestart,
+     date_end: dateEnd,
     }),
     headers: { 'Content-type': 'application/JSON' },
   });
 
   const result = await resolve.text();
+  console.log(result)
   return result;
 };
 
 const getReservation = async (id) => {
   const resolve = await fetch(`${baseURL}/${appID}/reservations?item_id=${id}`);
   const result = await resolve.json();
+
+  console.log(result,"new added dagta")
 
   if (!result.length) {
     return [];
@@ -51,24 +55,28 @@ const displayReservations = async (id) => {
 
   reservationArr.forEach((element) => {
     const reservationItem = reservationTemplate(
-      element.creation_date,
       element.username,
-      element.reservation,
+      element.date_start,
+      element.date_end,
     );
     html += reservationItem;
   });
   ul.insertAdjacentHTML('beforeend', html);
+  const number = document.querySelector('.counter');
+  number.textContent = await reservationsCounter(id);
 };
 
 const addReservation = async (event, form, id) => {
   event.preventDefault();
   const number = document.querySelector('.counter');
-  const name = form.querySelector('input');
-  const reservation = form.querySelector('textarea');
-
-  await postReservation(name.value, reservation.value, id);
-  await displayReservations(id);
-  number.textContent = await reservationsCounter(id);
+  const name = document.querySelector('input');
+  const startDate = document.getElementById('start__date');
+  const endDate = document.getElementById('end__date');
+  console.log(startDate.value, "start date")
+   await postReservation(name.value, startDate.value, endDate.value, id);
+   console.log('posted')
+   await displayReservations(id);
+   number.textContent = await reservationsCounter(id);
   form.reset();
 };
 

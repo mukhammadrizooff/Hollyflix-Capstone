@@ -22,9 +22,9 @@ const reservationModal = (movie, reservationLength) => `
     <form action="index_submit" method="POST" accept-charset="utf-8">
       <input type="text" placeholder="Name" name="Your name" maxlength="20" required/>
       <p>Start Date</p>
-      <input type="date" placeholder="Start date" name="Start date" maxlength="20" required/>
+      <input id="start__date" type="date" placeholder="Start date" name="Start date" maxlength="20" required/>
       <p>Return Date</p>
-      <input type="date" placeholder="Return date" name="Return date" maxlength="20" required/>
+      <input id="end__date" type="date" placeholder="Return date" name="Return date" maxlength="20" required/>
       <button type="submit" class="btn add-reservation-btn">Submit</button>
     </form>
   </div>
@@ -55,13 +55,14 @@ const reservationHandler = (movies) => {
   reservationBtn.forEach((btn, index) => {
     btn.addEventListener('click', async () => {
       openModal();
-      reservationLength = await reservationsCounter(movies[index].id);
+      console.log(movies[index].id)
+      // reservationLength = await reservationsCounter(movies[index].id);         // api call not working
       const urlBase = 'https://api.tvmaze.com/shows/';
       const url = `${urlBase}${movies[index].id}`;
       const movieData = await fetch(url)
         .then((response) => response.json())
-        .then((data) => data);
-
+        .then((data) => data);   
+         
       createModal(movieData, reservationLength);
       const form = document.querySelector('form');
       form.addEventListener('submit', (event) => {

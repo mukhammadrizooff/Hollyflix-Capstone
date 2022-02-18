@@ -17,7 +17,9 @@ const modalTemplate = (movie, commentsLength) => `
             <div class="info-container">
               <h3>Genres</h2>
               <p class="genres">${movie.genres}</p>
-              <p class="rating">Rating: ${movie.rating.average}</p>
+              <h3>Rating</h2>
+              <p class="rating">${movie.rating.average}</p>
+              <h3>Description</h2>
               <p class="description">${movie.summary}</p> 
             </div>
             <div class="info-container comments">
@@ -26,8 +28,9 @@ const modalTemplate = (movie, commentsLength) => `
               <h3>Add a comment</h2>
               <div class="msgErrorContainer"></div>
               <form action="index_submit" method="POST" accept-charset="utf-8">
-                <input type="text" placeholder="Name" name="Your name" maxlength="20" required/>
+                <input class="name-input" type="text" placeholder="Name" name="Your name" maxlength="20" required/>
                 <textarea
+                  class="textarea"
                   name="text-area"
                   maxlength="220"
                   placeholder="Your Insights" cols="50" rows="10" required></textarea>

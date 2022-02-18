@@ -154,7 +154,15 @@ footer {
 
 /* Feature like and buttons */
 
-.like-icon {
+.card__likes {
+  background-color: red;
+}
+
+.fa-thin {
+  font-size: 2rem;
+  background-color: blue;
+}
+/* .like-icon {
   width: 2.5rem;
   vertical-align: middle;
   margin: 0 1.5rem 0.4rem;
@@ -164,7 +172,7 @@ footer {
 
 .like-icon:hover {
   transform: scale(1.5);
-}
+} */
 
 /* .btn {
   width: 100%;
@@ -210,8 +218,8 @@ footer {
 }
 
 .modal-card {
-  background-color: khaki;
-  width: 40%;
+  background-color: rgb(134, 134, 129);
+  width: 50%;
   max-height: 90%;
   display: flex;
   flex-direction: column;
@@ -330,6 +338,33 @@ footer {
 
 .modal-card p.description {
   text-align: justify;
+}
+
+form {
+  line-height: 50px;
+}
+
+.name-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25vw;
+  margin-left: 12vw;
+  margin-right: 12vw;
+}
+
+.textarea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25vw;
+  margin-left: 12vw;
+  margin-right: 12vw;
+}
+
+.add-comment-btn {
+  margin-left: 14vw;
+  margin-right: 12vw;
 }
 
 /* Modal section end */

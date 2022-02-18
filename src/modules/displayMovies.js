@@ -9,7 +9,7 @@ const displayMovies = (data) => {
     card.classList.add('card');
     card.innerHTML = `
          <div class="card__image-container">
-           <img src=${item.image.medium}
+           <img class="img-card" src=${item.image.medium}
              alt="ant-man">
          </div>
          <div class="card__content">
@@ -17,8 +17,8 @@ const displayMovies = (data) => {
             ${item.name}
            </p>
            <div class="card__info">
-             <button class="card__comments text--medium">Comments</button>
-             <button class="card__reservations">Reservations</button>
+             <button class="btn card__comments">Comments</button>
+             <button class="btn card__reservations">Reservations</button>
              <button class=" card__likes text--medium" id =${item.id}>Likes</button>
            </div>
          </div>

@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
 }
 
 html {
@@ -16,21 +17,28 @@ body {
   margin: 2.5rem auto;
 }
 
-header {
-  display: flex;
-  width: 80vw;
-  height: 8vh;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2.5rem auto;
-  padding: 0 2.2rem;
-  font-size: 2.5rem;
-  border: 2px solid black;
+ul {
+  list-style: none;
 }
 
-.logo {
-  display: block;
-  font-size: 35px;
+a {
+  all: unset;
+}
+
+/* Header and footer */
+
+header,
+footer {
+  width: 80vw;
+  height: 8vh;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  font-size: 3rem;
+  z-index: 1;
 }
 
 .nav-list {
@@ -41,115 +49,120 @@ header {
 }
 
 .nav-item:not(:last-child) {
-  border-right: 2.5px solid black;
-  padding-right: 4.5rem;
+  border-right: 3px solid #000;
+  padding-right: 4rem;
 }
 
 .nav-item:hover {
   text-shadow: 0.5rem 1rem 2rem #000;
 }
 
+.logo {
+  display: block;
+  width: 22rem;
+  cursor: pointer;
+}
+
 footer {
-  display: flex;
-  width: 80vw;
-  height: 8vh;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2.5rem auto;
-  padding: 0 2.2rem;
-  font-size: 2.5rem;
-  border: 2px solid black;
-  position: fixed;
+  position: relative;
   bottom: 0;
-  left: 10%;
   letter-spacing: 0.5rem;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
-  grid-gap: 40px;
-  padding: 60px 0;
+@media screen and (max-width: 800px) {
+  header,
+  footer {
+    width: 95vw;
+    font-size: 2rem;
+  }
+
+  .nav-list {
+    gap: 2rem;
+  }
+
+  .nav-item:not(:last-child) {
+    padding-right: 2rem;
+  }
 }
 
-.text--medium {
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: black;
-}
+/* End Header and Footer section */
+
+/* Main section */
 
 .cards {
-  display: grid;
-  grid-column: 2 / span 12;
-  grid-template-columns: repeat(12, minmax(auto, 60px)) 1fr 1fr 1fr 1fr;
-  grid-gap: 40px;
-  margin-left: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .card {
-  grid-column-end: span 3;
   display: flex;
   flex-direction: column;
-  background-color: goldenrod;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.card:hover {
-  transform: translateY(-7px);
-}
-
-.card__image-container {
-  width: 100%;
-  padding-top: 56.25%;
-  overflow: hidden;
-  position: relative;
-}
-
-.card__image-container img {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card__content {
-  padding: 20px;
-}
-
-.card__title {
-  margin-bottom: 20px;
-}
-
-.card__info {
-  display: flex;
-  align-self: end;
   align-items: center;
+  gap: 1.5rem;
+  border: 2px solid #222;
+  border-radius: 12px;
+  padding: 1.5rem;
 }
 
-.card__likes {
-  margin-left: auto;
-  padding: 5px 5px;
-  background-color: whitesmoke;
-  border-radius: 20px;
+.img-card {
+  display: block;
+  max-width: 30rem;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
-.card__reservations {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px 20px;
-  background-color: whitesmoke;
-  border-radius: 20px;
+.img-card:hover {
+  transform: scale(1.1);
 }
 
-.card__comments {
-  margin-right: auto;
-  background-color: whitesmoke;
-  border-radius: 20px;
+.card__title, .movie-title {
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
+
+/* Feature like and buttons */
+.like-icon {
+  width: 2.5rem;
+  vertical-align: middle;
+  margin: 0 1.5rem 0.4rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.like-icon:hover {
+  transform: scale(1.5);
+}
+
+/* .btn {
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  background-color: red;
+  color: #fff;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: black;
+  color: #fff;
+} */
+/* End Feature like and buttons */
+
+/* The End main section */
+
 
 /* Modal section start */
 
@@ -295,36 +308,3 @@ main {
 }
 
 /* Modal section end */
-
-@media only screen and (max-width: 1000px) {
-  .card {
-    grid-column-end: span 6;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  main {
-    grid-gap: 20px;
-  }
-
-  .card {
-    grid-column-end: span 12;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  main {
-    grid-template-columns: 10px repeat(6, 1fr) 10px;
-    grid-gap: 10px;
-  }
-
-  .cards {
-    grid-column: 2 / span 6;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 20px;
-  }
-
-  .card {
-    grid-column-end: span 6;
-  }
-}

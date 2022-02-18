@@ -119,7 +119,8 @@ footer {
   transform: scale(1.1);
 }
 
-.card__title, .movie-title {
+.card__title,
+.movie-title {
   color: black;
   font-size: 15px;
   font-weight: 700;
@@ -162,7 +163,6 @@ footer {
 /* End Feature like and buttons */
 
 /* The End main section */
-
 
 /* Modal section start */
 

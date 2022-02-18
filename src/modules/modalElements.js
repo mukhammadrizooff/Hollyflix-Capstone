@@ -16,8 +16,8 @@ const modalTemplate = (movie, commentsLength) => `
             </div>
             <div class="info-container">
               <h3>Genres</h2>
-              <p class="rating">Rating: ${movie.rating.average}</p>
               <p class="genres">${movie.genres}</p>
+              <p class="rating">Rating: ${movie.rating.average}</p>
               <p class="description">${movie.summary}</p> 
             </div>
             <div class="info-container comments">

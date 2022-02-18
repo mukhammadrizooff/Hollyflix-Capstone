@@ -27,19 +27,17 @@ const getComment = async (id) => {
   return result;
 };
 
-const countComments = async (id) => {
-  const commentsNum = await getComment(id);
-  return commentsCounter(commentsNum)
-  
-};
-
 const commentsCounter = (commentsNum) => {
-  console.log(commentsNum)
   if (!commentsNum.length) {
     return 0;
   }
   return commentsNum.length;
-} 
+};
+
+const countComments = async (id) => {
+  const commentsNum = await getComment(id);
+  return commentsCounter(commentsNum);
+};
 
 const commentTemplate = (date, name, comment) => `
   <li>
@@ -79,5 +77,5 @@ const addComment = async (event, form, id) => {
 };
 
 export {
-  displayComments, addComment, commentsCounter,countComments, getComment,
+  displayComments, addComment, commentsCounter, countComments, getComment,
 };

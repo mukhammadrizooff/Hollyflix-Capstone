@@ -4,16 +4,18 @@ const reservationLength = 0;
 
 const reservationModal = (movie, reservationLength) => `
 <button class="close-modal-btn">x</button>
-  <div class="modal-header">
-    <figure>
-      <img src="${movie.image.medium}" alt="Title image"/>
-    </figure>
-    <h2 class="movie-title">${movie.name}</h2>
-  </div>
-  <div class="info-container">
-    <h3>Instructions:</h2>
-    <p class="description">${movie.genres}</p>
-  </div>
+<div class="modal-header">
+<figure>
+  <img src="${movie.image.medium}" alt="Title image"/>
+</figure>
+<h2 class="movie-title">${movie.name}</h2>
+</div>
+<div class="info-container">
+<h3>Genres</h2>
+<p class="genres">${movie.genres}</p>
+<p class="rating">Rating: ${movie.rating.average}</p>
+<p class="description">${movie.summary}</p> 
+</div>
   <div class="info-container reservation">
     <h3>Reservation (<span class="counter">${reservationLength}</span>)</h2>
     <ul class="reservation-container"></ul>

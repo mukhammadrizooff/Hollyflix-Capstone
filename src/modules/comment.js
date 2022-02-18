@@ -17,7 +17,7 @@ const postComment = async (username, comment, id) => {
 };
 
 const getComment = async (id) => {
-  const resolve = await fetch(`${baseURL}/${appID}/comments?item_id=${id}`);
+  const resolve = await window.fetch(`${baseURL}/${appID}/comments?item_id=${id}`);
   const result = await resolve.json();
 
   if (!result.length) {
@@ -27,12 +27,16 @@ const getComment = async (id) => {
   return result;
 };
 
-const commentsCounter = async (id) => {
-  const commentsNum = await getComment(id);
+const commentsCounter = (commentsNum) => {
   if (!commentsNum.length) {
     return 0;
   }
   return commentsNum.length;
+};
+
+const countComments = async (id) => {
+  const commentsNum = await getComment(id);
+  return commentsCounter(commentsNum);
 };
 
 const commentTemplate = (date, name, comment) => `
@@ -73,5 +77,5 @@ const addComment = async (event, form, id) => {
 };
 
 export {
-  displayComments, addComment, commentsCounter, getComment,
+  displayComments, addComment, commentsCounter, countComments, getComment,
 };

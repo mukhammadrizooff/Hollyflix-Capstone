@@ -39,11 +39,10 @@ button:hover {
   color: aliceblue;
 }
 
-
 /* Header and footer */
 
 header {
-  background-image: url('./modules/logo/logo_png.png');
+  background-image: url("./modules/logo/logo_png.png");
 }
 
 header,
@@ -108,9 +107,7 @@ footer {
   }
 }
 
-
 /* End Header and Footer section */
-
 
 /* Main section */
 
@@ -155,7 +152,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-
 /* Feature like and buttons */
 
 .like-icon {
@@ -169,7 +165,6 @@ footer {
 .like-icon:hover {
   transform: scale(1.5);
 }
-
 
 /* .btn {
   width: 100%;
@@ -190,12 +185,9 @@ footer {
   color: #fff;
 } */
 
-
 /* End Feature like and buttons */
 
-
 /* The End main section */
-
 
 /* Modal section start */
 
@@ -339,6 +331,5 @@ footer {
 .modal-card p.description {
   text-align: justify;
 }
-
 
 /* Modal section end */

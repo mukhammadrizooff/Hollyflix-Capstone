@@ -1,42 +1,42 @@
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const appID = 'MryrGqfCiLUJUEbyrBie';
 
-const postReservation = async(username, datestart, dateEnd, id) => {
-    const resolve = await fetch(`${baseURL}/${appID}/reservations/`, {
-        method: 'POST',
-        body: JSON.stringify({
-            item_id: id,
-            username,
-            date_start: datestart,
-            date_end: dateEnd,
-        }),
-        headers: { 'Content-type': 'application/JSON' },
-    });
+const postReservation = async (username, datestart, dateEnd, id) => {
+  const resolve = await fetch(`${baseURL}/${appID}/reservations/`, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+      username,
+      date_start: datestart,
+      date_end: dateEnd,
+    }),
+    headers: { 'Content-type': 'application/JSON' },
+  });
 
-    const result = await resolve.text();
-    return result;
+  const result = await resolve.text();
+  return result;
 };
 
-const getReservation = async(id) => {
-    const resolve = await fetch(`${baseURL}/${appID}/reservations?item_id=${id}`);
-    const result = await resolve.json();
+const getReservation = async (id) => {
+  const resolve = await fetch(`${baseURL}/${appID}/reservations?item_id=${id}`);
+  const result = await resolve.json();
 
-    if (!result.length) {
-        return [];
-    }
+  if (!result.length) {
+    return [];
+  }
 
-    return result;
+  return result;
 };
 
 const reservationsCounter = (data) => {
-    let reservationCount = 0;
-    data.forEach(() => {
-        reservationCount += 1;
-    });
-    // if (!data.length) {
-    //     return 0;
-    // }
-    return reservationCount;
+  let reservationCount = 0;
+  data.forEach(() => {
+    reservationCount += 1;
+  });
+  // if (!data.length) {
+  //     return 0;
+  // }
+  return reservationCount;
 };
 
 const reservationTemplate = (date, name, reservation) => `
@@ -47,39 +47,39 @@ const reservationTemplate = (date, name, reservation) => `
   </li>
 `;
 
-const displayReservations = async(id) => {
-    const ul = document.querySelector('ul');
-    const reservationArr = await getReservation(id);
-    ul.innerHTML = '';
-    let html = '';
-    reservationArr.forEach((element) => {
-        const reservationItem = reservationTemplate(
-            element.username,
-            element.date_start,
-            element.date_end,
-        );
-        html += reservationItem;
-    });
-    ul.insertAdjacentHTML('beforeend', html);
-    const number = document.querySelector('.counter');
-    number.textContent = reservationsCounter(reservationArr);
+const displayReservations = async (id) => {
+  const ul = document.querySelector('ul');
+  const reservationArr = await getReservation(id);
+  ul.innerHTML = '';
+  let html = '';
+  reservationArr.forEach((element) => {
+    const reservationItem = reservationTemplate(
+      element.username,
+      element.date_start,
+      element.date_end,
+    );
+    html += reservationItem;
+  });
+  ul.insertAdjacentHTML('beforeend', html);
+  const number = document.querySelector('.counter');
+  number.textContent = reservationsCounter(reservationArr);
 };
 
-const addReservation = async(event, form, id) => {
-    event.preventDefault();
-    const number = document.querySelector('.counter');
-    const name = document.querySelector('input');
-    const startDate = document.getElementById('start__date');
-    const endDate = document.getElementById('end__date');
-    await postReservation(name.value, startDate.value, endDate.value, id);
-    await displayReservations(id);
-    number.textContent = await reservationsCounter(id);
-    form.reset();
+const addReservation = async (event, form, id) => {
+  event.preventDefault();
+  const number = document.querySelector('.counter');
+  const name = document.querySelector('input');
+  const startDate = document.getElementById('start__date');
+  const endDate = document.getElementById('end__date');
+  await postReservation(name.value, startDate.value, endDate.value, id);
+  await displayReservations(id);
+  number.textContent = await reservationsCounter(id);
+  form.reset();
 };
 
 export {
-    displayReservations,
-    addReservation,
-    reservationsCounter,
-    getReservation,
+  displayReservations,
+  addReservation,
+  reservationsCounter,
+  getReservation,
 };

@@ -28,12 +28,15 @@ const getReservation = async (id) => {
   return result;
 };
 
-const reservationsCounter = async (id) => {
-  const reservationsNum = await getReservation(id);
-  if (!reservationsNum.length) {
-    return 0;
-  }
-  return reservationsNum.length;
+const reservationsCounter = (data) => {
+  let reservationCount = 0;
+  data.forEach(() => {
+    reservationCount += 1;
+  });
+  // if (!data.length) {
+  //     return 0;
+  // }
+  return reservationCount;
 };
 
 const reservationTemplate = (date, name, reservation) => `
@@ -49,7 +52,6 @@ const displayReservations = async (id) => {
   const reservationArr = await getReservation(id);
   ul.innerHTML = '';
   let html = '';
-
   reservationArr.forEach((element) => {
     const reservationItem = reservationTemplate(
       element.username,
@@ -60,7 +62,7 @@ const displayReservations = async (id) => {
   });
   ul.insertAdjacentHTML('beforeend', html);
   const number = document.querySelector('.counter');
-  number.textContent = await reservationsCounter(id);
+  number.textContent = reservationsCounter(reservationArr);
 };
 
 const addReservation = async (event, form, id) => {
@@ -76,5 +78,8 @@ const addReservation = async (event, form, id) => {
 };
 
 export {
-  displayReservations, addReservation, reservationsCounter, getReservation,
+  displayReservations,
+  addReservation,
+  reservationsCounter,
+  getReservation,
 };

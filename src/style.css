@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: aliceblue;
+  background-color: #222;
   margin: 2.5rem auto;
 }
 
@@ -25,18 +25,40 @@ a {
   all: unset;
 }
 
+button {
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: aliceblue;
+  height: 3rem;
+  width: 9rem;
+}
+
+button:hover {
+  border: aliceblue;
+  background-color: #222;
+  color: aliceblue;
+}
+
 /* Header and footer */
+
+header {
+  background-image: url("./modules/logo/logo_png.png");
+}
 
 header,
 footer {
+  background-repeat: no-repeat;
   width: 80vw;
-  height: 8vh;
-  border: 1px solid #333;
+  height: 10vh;
+  border: 3px solid #111;
+  border-radius: 5px;
   display: flex;
+  color: aliceblue;
   justify-content: space-between;
   align-items: center;
   margin: 2rem auto;
-  padding: 0 2rem;
+  background-color: #333;
+  padding: 2rem;
   font-size: 3rem;
   z-index: 1;
 }
@@ -49,12 +71,12 @@ footer {
 }
 
 .nav-item:not(:last-child) {
-  border-right: 3px solid #000;
+  border-right: 3px solid aliceblue;
   padding-right: 4rem;
 }
 
 .nav-item:hover {
-  text-shadow: 0.5rem 1rem 2rem #000;
+  text-shadow: 0.5rem 1rem 2rem aliceblue;
 }
 
 .logo {
@@ -102,9 +124,10 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  border: 2px solid #222;
+  border: 5px solid #111;
   border-radius: 12px;
   padding: 1.5rem;
+  background-color: aliceblue;
 }
 
 .img-card {
@@ -130,6 +153,7 @@ footer {
 }
 
 /* Feature like and buttons */
+
 .like-icon {
   width: 2.5rem;
   vertical-align: middle;

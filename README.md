@@ -65,28 +65,10 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@muhammadrizooff](https://twitter.com/muhammadrizooff)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/mukhammadrizooff)
 
-👤 *Mauro Vasconcelos**
+👤 **Mauro Vasconcelos**
 
 - GitHub: [@vanillainanutshell](https://github.com/vanillainanutshell)
 - LinkedIn: [Mauro Vasconcelos](https://www.linkedin.com/in/mauro-vasconcelos-a3671a223/)
-
-👤 **Sumair Qaisar**
-
-- GitHub: [@sumairq](https://github.com/sumairq)
-- Twitter: [@sumair_qaisar](https://twitter.com/sumair_qaisar)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sumair-qaisar-jadoon-84a877164/)
-
-👤 **Mukhammadrizo Abdunazarov**
-
-- GitHub: [@mukhammadrizooff](https://github.com/mukhammadrizooff)
-- Twitter: [@muhammadrizooff](https://twitter.com/muhammadrizooff)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/mukhammadrizooff)
-
-👤 *Mauro Vasconcelos**
-
-- GitHub: [@githubhandle](https://github.com/vanillainanutshell)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -100,9 +82,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- For retreiving the data for movies on this website TVMaze API is used.
+- For adding the Comment, Reservation, like functionality Microverse's Involvement API is used.
 
 ## 📝 License
 

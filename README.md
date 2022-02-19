@@ -5,7 +5,7 @@
 > Only on Hollyflix
 Hollyflix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials and more, all tailored specifically to you.
 
-![image](https://user-images.githubusercontent.com/88060989/154809696-b335e980-14bb-4aec-8223-381c7efc70e2.png)
+![2022-02-19_22-41-37](https://user-images.githubusercontent.com/63915024/154812532-d52535fd-1acd-4aec-aaa3-759892492ad5.png)
 
 
 ## Built With

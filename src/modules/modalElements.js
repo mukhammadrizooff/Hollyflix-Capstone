@@ -7,14 +7,14 @@ import {
 let commentsLength = 0;
 
 const modalTemplate = (movie, commentsLength) => `
-          <button class="close-modal-btn">x</button>
-            <div class="modal-header">
+<div class="modal-header">
+<button class="close-modal-btn">x</button>
               <figure>
                 <img src="${movie.image.medium}" alt="Title image"/>
               </figure>
-              <h2 class="movie-title">${movie.name}</h2>
-            </div>
-            <div class="info-container">
+              </div>
+              <h2 class="modal-title">${movie.name}</h2>
+            <div class="info-container modal-border">
               <h3>Genres</h2>
               <p class="genres">${movie.genres}</p>
               <h3>Rating</h2>
@@ -22,7 +22,7 @@ const modalTemplate = (movie, commentsLength) => `
               <h3>Description</h2>
               <p class="description">${movie.summary}</p> 
             </div>
-            <div class="info-container comments">
+            <div class="info-container comments modal-border">
               <h3>Comments (<span class="counter">${commentsLength}</span>)</h2>
               <ul class="comment-container"></ul>
               <h3>Add a comment</h2>

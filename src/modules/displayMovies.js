@@ -1,5 +1,6 @@
 import { updateLikes, addLike } from './likes.js';
 import { countMovies } from './counter.js';
+import likeSvg from '../modules/logo/heart.svg';
 
 const displayMovies = (data) => {
   const moviesSection = document.querySelector('.cards');
@@ -17,9 +18,10 @@ const displayMovies = (data) => {
             ${item.name}
            </p>
            <div class="card__info">
+             <button id =${item.id} class=" card__likes text--medium">Likes</button> 
              <button class="btn card__comments">Comments</button>
              <button class="btn card__reservations">Reservations</button>
-             <button class=" card__likes text--medium" id =${item.id}>Likes</button>
+             <img class="like-icon" src="${likeSvg}" alt="like-icon">
            </div>
          </div>
          `;

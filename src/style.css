@@ -167,10 +167,9 @@ footer {
 .img-card:hover {
   transform: scale(1.1);
 }
-
 .card__title,
 .movie-title {
-  color: black;
+  color: aliceblue;
   font-size: 15px;
   font-weight: 700;
   text-align: center;
@@ -178,6 +177,9 @@ footer {
   margin-bottom: 1rem;
 }
 
+.movie-title {
+  font-size: 2.5rem;
+}
 /* Feature like and buttons */
 
 .card__likes {
@@ -254,6 +256,7 @@ footer {
   align-items: center;
   justify-content: flex-start;
   gap: 4rem;
+  background-color: #111;
   overflow: auto;
   padding-bottom: 3.5rem;
   border-radius: 10px;
@@ -297,7 +300,23 @@ footer {
   width: 100%;
   height: 100%;
 }
+input{
+  border: 2px solid black;
+  width: 15rem;
+  height: 3rem;
 
+}
+input>p{
+  width: 90%;
+  font-weight: bold;
+  font-size: 3rem!important;
+
+}
+form>p{
+  font-size: 3rem;
+  color: aliceblue;
+  font-weight: bold;
+}
 .modal-card .modal-header {
   position: relative;
   width: 100%;
@@ -333,13 +352,15 @@ footer {
   align-items: center;
   justify-content: center;
   background-color: #fff;
+  background-color: #111;
   padding: 2rem;
+  color: aliceblue;
 }
 
 .modal-card h3 {
   width: 100%;
-  color: #fff;
-  color: #cc2008;
+  background-color: #111;
+  color: aliceblue;
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
@@ -350,7 +371,6 @@ footer {
 .modal-card p {
   width: 90%;
   text-align: center;
-  margin-bottom: 2rem;
   font-size: 1.6rem;
 }
 

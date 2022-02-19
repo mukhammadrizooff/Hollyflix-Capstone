@@ -1,6 +1,6 @@
 import { updateLikes, addLike } from './likes.js';
 import { countMovies } from './counter.js';
-import likeSvg from '../modules/logo/heart.svg';
+import likeSvg from './logo/heart.svg';
 
 const displayMovies = (data) => {
   const moviesSection = document.querySelector('.cards');

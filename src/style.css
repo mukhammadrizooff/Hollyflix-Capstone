@@ -203,12 +203,21 @@ footer {
 /* Feature like and buttons */
 
 .card__likes {
+  color: #cc2008;
   margin-block-start: 1.33em;
   margin-block-end: 1.33em;
   margin-inline-start: 0;
   margin-inline-end: 0;
   font-weight: bold;
   background-color: white;
+}
+
+.card__likes:hover {
+  background-color: #cc2008;
+}
+
+.card__likes:active {
+  background-color: #661004;
 }
 
 .like-icon {

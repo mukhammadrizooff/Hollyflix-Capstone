@@ -24,7 +24,7 @@ Hollyflix is the home of amazing original programming that you can’t find anyw
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://sumairq.github.io/hollyflix-capstone/dist)
 
 
 ## Getting Started

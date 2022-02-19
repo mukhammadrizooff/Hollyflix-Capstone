@@ -1,7 +1,7 @@
 const baseUrl = 'https://api.tvmaze.com/';
 
 const getMovies = async () => {
-  const response = await fetch(`${baseUrl}shows`)
+  const response = fetch(`${baseUrl}shows`)
     .then((response) => response.json())
     .then((data) => {
       const slicedArr = data.slice(0, 50);

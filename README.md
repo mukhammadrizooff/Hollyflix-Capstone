@@ -82,8 +82,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- For retreiving the data for movies on this website TVMaze API is used.
-- For adding the Comment, Reservation, like functionality Microverse's Involvement API is used.
+- For retreiving the data for movies on this website [TVMaze API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270) is used.
+- For adding the Comment, Reservation, like functionality [Microverse's Involvement API](https://www.tvmaze.com/api) is used.
 
 ## 📝 License
 

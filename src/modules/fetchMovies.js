@@ -1,6 +1,6 @@
 const baseUrl = 'https://api.tvmaze.com/';
 
-const getMovies = async () => {
+const getMovies = () => {
   const response = fetch(`${baseUrl}shows`)
     .then((response) => response.json())
     .then((data) => {

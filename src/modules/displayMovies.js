@@ -17,9 +17,9 @@ const displayMovies = (data) => {
             ${item.name}
            </p>
            <div class="card__info">
-             <button class="btn card__comments">Comments</button>
-             <button class="btn card__reservations">Reservations</button>
-             <button class=" card__likes text--medium" id =${item.id}>Likes</button>
+           <button class="btn card__comments">Comments</button>
+           <button class="btn card__reservations">Reservations</button>
+           <button id =${item.id} class=" card__likes text--medium">Likes</button> 
            </div>
          </div>
          `;

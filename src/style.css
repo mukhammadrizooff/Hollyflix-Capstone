@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ubuntu:ital,wght@1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 html {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Sarabun', sans-serif;
   font-size: 65%;
 }
 
@@ -41,17 +41,19 @@ button:hover {
 
 /* Header and footer */
 
-header {
+/* header {
   background-image: url("./modules/logo/logo_png.png");
-}
+} */
 
 header,
 footer {
   background-repeat: no-repeat;
-  width: 80vw;
+  width: 90vw;
   height: 10vh;
-  border: 3px solid #111;
-  border-radius: 5px;
+
+  /* border: 3px solid #111; */
+
+  /* border-radius: 5px; */
   display: flex;
   color: aliceblue;
   justify-content: space-between;
@@ -85,6 +87,12 @@ footer {
   cursor: pointer;
 }
 
+.logo-img {
+  margin-left: -35vw;
+  height: 50px;
+  width: 30rem;
+}
+
 footer {
   position: relative;
   bottom: 0;
@@ -98,12 +106,32 @@ footer {
     font-size: 2rem;
   }
 
+  .logo-img {
+    margin-left: -16vw;
+    height: 7vh;
+    width: 35vw;
+  }
+
+  .logo {
+    width: 5vw;
+    height: 5vh;
+  }
+
   .nav-list {
+    font-size: 15px;
     gap: 2rem;
   }
 
   .nav-item:not(:last-child) {
     padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .logo-img {
+    margin-left: -55vw;
+    height: 65px;
+    width: 40rem;
   }
 }
 
@@ -145,14 +173,52 @@ footer {
 .card__title,
 .movie-title {
   color: black;
-  font-size: 15px;
+  font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   padding: 1rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.movie-title {
+  font-size: 2.5rem;
+}
+
+.modal-border {
+  padding: 1rem;
+  border: 4px solid white;
+}
+
+.modal-title {
+  margin: 30px;
+  font-size: 4rem;
+  padding: 1rem;
+  border: 4px solid white;
+  color: white;
+  text-align: center;
+  font-weight: 600;
 }
 
 /* Feature like and buttons */
+
+.card__likes {
+  color: #cc2008;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: bold;
+  background-color: white;
+}
+
+.card__likes:hover {
+  background-color: #cc2008;
+}
+
+.card__likes:active {
+  background-color: #661004;
+}
 
 .like-icon {
   width: 2.5rem;
@@ -210,24 +276,23 @@ footer {
 }
 
 .modal-card {
-  background-color: khaki;
-  width: 40%;
+  width: 50%;
   max-height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 4rem;
+  background-color: #111;
   overflow: auto;
-  padding-bottom: 4rem;
+  padding-bottom: 3.5rem;
   border-radius: 10px;
 }
 
 .close-modal-btn {
-  position: absolute;
-  top: 8px;
-  right: 38px;
-  align-self: flex-end;
+  position: sticky;
+  top: 20px;
+  left: 800px;
   border-style: none;
   border-radius: 50%;
   background-color: #fff;
@@ -237,7 +302,7 @@ footer {
   width: 4rem;
   height: 4rem;
   margin: 2rem 2rem 0 0;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 2px rgba(255, 4, 4, 0.2);
   z-index: 10;
 }
 
@@ -262,12 +327,37 @@ footer {
   height: 100%;
 }
 
+input {
+  border: 2px solid black;
+  width: 15rem;
+  height: 3rem;
+}
+
+input > p {
+  width: 90%;
+  font-weight: bold;
+  font-size: 3rem !important;
+}
+
+form > p {
+  font-size: 3rem;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.modal-header figure {
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 2rem;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
 .modal-card .modal-header {
   position: relative;
   width: 100%;
 }
 
-.modal-card .recipe-title {
+.modal-card .movie-title {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -275,6 +365,7 @@ footer {
   background-color: #cc2008;
   font-weight: 400;
   font-size: 3rem;
+  margin: 0;
   padding: 2rem;
   text-align: center;
   border-top-left-radius: 30px;
@@ -296,13 +387,15 @@ footer {
   align-items: center;
   justify-content: center;
   background-color: #fff;
+  background-color: #111;
   padding: 2rem;
+  color: aliceblue;
 }
 
 .modal-card h3 {
   width: 100%;
-  color: #fff;
-  color: #cc2008;
+  background-color: #111;
+  color: aliceblue;
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
@@ -313,7 +406,6 @@ footer {
 .modal-card p {
   width: 90%;
   text-align: center;
-  margin-bottom: 2rem;
   font-size: 1.6rem;
 }
 
@@ -332,4 +424,126 @@ footer {
   text-align: justify;
 }
 
+/* Start comment section */
+
+.comments ul {
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 1.8rem;
+}
+
+.comments ul li {
+  background-color: #eee;
+  color: #000;
+  font-style: normal;
+  padding: 1.6rem 2.8rem;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.reservation ul li {
+  background-color: #eee;
+  color: black;
+  padding: 1.6rem 2.8rem;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.comments ul li:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.comments ul li span:first-child {
+  margin-right: 1rem;
+}
+
+.comments ul li span:last-child {
+  font-weight: 300;
+}
+
+.comments form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.comments h2 {
+  margin-bottom: 2rem;
+}
+
+.comments .msgErrorContainer {
+  color: red;
+  margin-bottom: 2rem;
+}
+
+.comments form input,
+.comments form textarea {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  resize: none;
+}
+
+/* End comment section */
+
+/* Reservation container start */
+.reservation ul {
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 1.8rem;
+}
+
+.reservation ul li:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.reservation ul li span:first-child {
+  margin-right: 1rem;
+}
+
+.reservation ul li span:last-child {
+  font-weight: 300;
+}
+
+.reservation form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reservation h2 {
+  margin-bottom: 2rem;
+}
+
+.reservation .msgErrorContainer {
+  color: red;
+  margin-bottom: 2rem;
+}
+
+.reservation form input {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  resize: none;
+}
+
+/* Reservation container end */
+
+.add-comment-btn {
+  margin-left: 14vw;
+  margin-right: 12vw;
+}
+
+.add-reservation-btn {
+  margin-left: 14vw;
+  margin-right: 12vw;
+}
+
 /* Modal section end */
+*::-webkit-scrollbar {
+  display: none;
+}

@@ -3,20 +3,22 @@ import { displayReservations, addReservation } from './reservation.js';
 const reservationLength = 0;
 
 const reservationModal = (movie, reservationLength) => `
-<button class="close-modal-btn">x</button>
 <div class="modal-header">
-<figure>
-  <img src="${movie.image.medium}" alt="Title image"/>
-</figure>
-<h2 class="movie-title">${movie.name}</h2>
-</div>
-<div class="info-container">
-<h3>Genres</h2>
-<p class="genres">${movie.genres}</p>
-<p class="rating">Rating: ${movie.rating.average}</p>
-<p class="description">${movie.summary}</p> 
-</div>
-  <div class="info-container reservation">
+<button class="close-modal-btn">x</button>
+              <figure>
+                <img src="${movie.image.medium}" alt="Title image"/>
+              </figure>
+              </div>
+              <h2 class="modal-title">${movie.name}</h2>
+            <div class="info-container modal-border">
+              <h3>Genres</h2>
+              <p class="genres">${movie.genres}</p>
+              <h3>Rating</h2>
+              <p class="rating">${movie.rating.average}</p>
+              <h3>Description</h2>
+              <p class="description">${movie.summary}</p> 
+            </div>
+  <div class="info-container reservation modal-border">
     <h3>Reservation (<span class="counter">${reservationLength}</span>)</h2>
     <ul class="reservation-container"></ul>
     <h3>Reserve</h2>

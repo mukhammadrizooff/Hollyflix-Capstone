@@ -72,7 +72,7 @@ const addComment = async (event, form, id) => {
 
   await postComment(name.value, comment.value, id);
   await displayComments(id);
-  number.textContent = await commentsCounter(id);
+  number.textContent = await countComments(id);
   form.reset();
 };
 

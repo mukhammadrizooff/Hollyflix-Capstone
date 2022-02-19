@@ -1,42 +1,77 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hollyflix Capstone
+# Hollyflix
+
+> Only on Hollyflix
+Hollyflix is the home of amazing original programming that you can’t find anywhere else. Movies, TV shows, specials and more, all tailored specifically to you.
 
 ![image](https://user-images.githubusercontent.com/88060989/154809696-b335e980-14bb-4aec-8223-381c7efc70e2.png)
 
 
+
 ## Built With
 
-- HTML5
-- CSS
-- JavaScript
+### Major languages:
+- HTML & CSS
+- JavaScript (ES6)
+### Technologies and Prerequisites:
+- Webpack
+- API
+- JS Modules
+- NPM
+- Linters
+- Tests
+- Windows 10
+
+## Live Demo (if available)
+
+[Live Demo Link](https://livedemo.com)
 
 
-### Setup
+## Getting Started
 
-- Clone this repo URL "https://github.com/sumairq/hollyflix-capstone"
+To get a local copy up and running follow these simple example steps.
+
+### Install
+
+- On GitHub.com, navigate to the main page of the repository. Above the list of files, click Download icon and Code.
+- Copy for git clone
+- Type git clone, and then paste the URL you copied earlier.
+`$ git clone https://github.com/sumairq/hollyflix.git`
+- Install dependencies `$ npm install`
+- If you want to build the project `$ npm run build` - this will build the project in /dist folder
+- Start the Project `$ npm start` - serve the project in browser
+
+
+
 
 ## Authors
 
-👤 **Author1**
+👤 **Sumair Qaisar**
+
+- GitHub: [@sumairq](https://github.com/sumairq)
+- Twitter: [@sumair_qaisar](https://twitter.com/sumair_qaisar)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sumair-qaisar-jadoon-84a877164/)
+
+👤 **Mukhammadrizo Abdunazarov**
+
+- GitHub: [@mukhammadrizooff](https://github.com/mukhammadrizooff)
+- Twitter: [@muhammadrizooff](https://twitter.com/muhammadrizooff)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mukhammadrizooff)
+
+👤 *Mauro Vasconcelos**
 
 - GitHub: [@vanillainanutshell](https://github.com/vanillainanutshell)
 - LinkedIn: [Mauro Vasconcelos](https://www.linkedin.com/in/mauro-vasconcelos-a3671a223/)
 
-👤 **Author2**
 
-- GitHub: [@mukhammadrizooff](https://github.com/mukhammadrizooff)
-- LinkedIn: [Mukhammad Rizo](https://www.linkedin.com/in/mukhammadrizooff/)
-
-👤 **Author3**
-
-- GitHub: [@sumairq](https://github.com/sumairq)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](../../issues/).
+
+Feel free to check the [issues page](https://github.com/sumairq/hollyflix-capstone/issues).
 
 ## Show your support
 

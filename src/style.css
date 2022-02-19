@@ -109,7 +109,7 @@ footer {
     height: 7vh;
     width: 35vw;
   }
-  
+
   .logo {
     width: 5vw;
     height: 5vh;
@@ -465,13 +465,13 @@ footer {
   margin-bottom: 2rem;
 }
 
- .reservation form input {
+.reservation form input {
   border: 1px solid;
   border-radius: 10px;
   padding: 1rem;
   resize: none;
- }
- 
+}
+
 /* Reservation container end */
 
 .add-comment-btn {
